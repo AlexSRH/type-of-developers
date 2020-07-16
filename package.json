@@ -5,14 +5,23 @@
   "repository": "git@github.com:AlexSRH/type-of-developers.git",
   "author": "Alexsandro G Bezerra <aalexo1313@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "commit": "git-cz"
+  },
   "devDependencies": {
     "@commitlint/cli": "^9.1.1",
     "@commitlint/config-conventional": "^9.1.1",
+    "commitizen": "^4.1.2",
     "husky": "^4.2.5"
   },
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
     }
   }
 }
