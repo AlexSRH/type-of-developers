@@ -1,0 +1,18 @@
+{
+  "name": "type-of-developers",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:AlexSRH/type-of-developers.git",
+  "author": "Alexsandro G Bezerra <aalexo1313@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@commitlint/cli": "^9.1.1",
+    "@commitlint/config-conventional": "^9.1.1",
+    "husky": "^4.2.5"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
+}
