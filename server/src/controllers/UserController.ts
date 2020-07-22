@@ -6,13 +6,18 @@ class UserController {
   async store (request: Request, response: Response) {
     const { name, email, password } = request.body
 
-    const user = new User()
+    if (await User.findOne({ where: { email } })) {
+      return response.status(200).json({ message: 'User already created' })
+    }
 
+    const user = new User()
     user.name = name
     user.email = email
-    user.passwordHash = password
+    await user.setPasswordHash(password)
 
     const savedUser = await user.save()
+
+    delete savedUser.passwordHash
 
     return response.json(savedUser)
   }
